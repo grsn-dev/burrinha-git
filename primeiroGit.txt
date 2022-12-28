@@ -1,6 +1,16 @@
 git init
 
+git status
+
 git add .
 
 git commit -m "mensagem..."
 
+# garante estar usando o "main" em vez do "master"
+git branch -M main
+
+## associa projeto local com o projeto do github
+git remote add origin git@github.com:grsn-dev/burrinha-git.git
+
+## envia local para o main
+git push -u origin main
