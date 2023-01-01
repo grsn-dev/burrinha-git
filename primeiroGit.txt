@@ -20,3 +20,13 @@ git clone git@github.com:grsn-dev/burrinha-git.git
 
 ## atualizar llcal com o remoto
 git pull --rebase
+
+
+## GitHUb Desktop no Linux
+## https://github.com/shiftkey/desktop
+$ wget -qO - https://mirror.mwt.me/ghd/gpgkey | sudo tee /etc/apt/trusted.gpg.d/shiftkey-desktop.asc > /dev/null
+# if you want to use packagecloud.io
+$ sudo sh -c 'echo "deb [arch=amd64] https://packagecloud.io/shiftkey/desktop/any/ any main" > /etc/apt/sources.list.d/packagecloud-shiftkey-desktop.list'
+# if you want to use the US mirror
+$ sudo sh -c 'echo "deb [arch=amd64] https://mirror.mwt.me/ghd/deb/ any main" > /etc/apt/sources.list.d/packagecloud-shiftkey-desktop.list'
+$ sudo apt update && sudo apt install github-desktop
