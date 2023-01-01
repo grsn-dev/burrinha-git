@@ -17,3 +17,6 @@ git push -u origin main
 
 ## clonar repositorio
 git clone git@github.com:grsn-dev/burrinha-git.git
+
+## atualizar llcal com o remoto
+git pull --rebase
