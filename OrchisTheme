@@ -1,0 +1,101 @@
+#!bin/bash
+sudo apt install dconf-editor
+sudo apt-get remove plank --auto-remove
+killal plank
+****************************************
+Instalando GTK theme, cursors and Fonts
+https://github.com
+cd /Downloads
+git clone https://github.com/vinceliuice/Orchis-theme.git
+cd Orchis-theme
+./install.sh -t all
+cd ..
+git clone https://github.com/vinceliuice/Tela-circle-icon-theme.git
+cd Tela-circle-icon-theme
+./install.sh -help
+./install.sh -a
+cd..
+git clone https://github.com/vinceliuice/Vimix-cursors
+cd Vimix./install.sh -a
+cd ~/local/share/icons 
+cortar VImix-cursors Wimix-white-cursors
+criar /home/gerson/.icons
+colar os cortados
+acessar arquivos
+pasta Downloads
+pasta Budgie-Orchis-Config/fonts
+copiar a ásta fonts ==> /home/gerson/.fonts
+*******************************************
+aplicando GTK theme, icons, cursors and change Wallpaper
+menu Budgie ==> Style
+Budgie Desktop Settings
+Widgets ==> Orchisd-light-compact
+Icons ==> Telka-circle-blue-dark
+Cursors ==> Vimix-cursors
+
+==> Desktop
+Fonts
+Window Titles ==> Roboto Regular ==> 10
+Documents --> Roboto Regular == 10
+Interface - Roboto Regualr ==> 10
+Monospace ==> Iosevka Term Regular = 10
+==> Raven
+show Power Strip ==> on
+Allow raising voluma above 100% = on
+Enable Display week numbers in Calendar ==> on
+==> Windows
+Center new windows on screen ==> on
+Disable Night Mode when windows ==> on
+Sair das configurações
+Mouse direito 
+Change Desktop Background
+Add Picture
+Escolher os Wallpapers
+*****************************************************
+Instalar e configurar Panel e Applets
+
+BUdgie Desktop Extras
+Instalar Calendar Applet 
+Arquivos
+Download
+Budgie-Orchis-Config ==> budgie-config-dconf
+Abrir terminal
+sconf load /com/solus-project/ < budgie-config-dconf
+
+LOGOUT
+******************************************************
+Budgie Desktop Settings
+Bottom Panel 
+Budgie Menu
+Menu Icon / procurar a pasta de icones / slecionar focus-dot-circle.svg
+Set icon
+
+Show time
+Automatic - desmarcar
+Ajusta a posição
+Ajustar a Time Font, size , color
+Ajustar Date font, Size Color
+Wheather Show / Desktop / Set Custom Poistion: X:1560, y:800
+*************************************************************************
+Instalando e Configurando o Ulauncher
+https://ulauncher.io/#Download / arquivo all.deb
+sudo apt install all.deb
+Na barra inferior / Ulancher / Preferences
+Na Home/Gerson/.config/ulauncher
+criar nova pasta "user-themes"
+Na pasta Downloads/Ulauncher-theme
+copiar as pastas orchis-dark e orchis-light
+colar /home/gerson/.config/ulauncher/user-themes
+
+https://www.pling.com/p/1660776/
+Ulauncher/preferences
+Color Theme ==> alterar
+Launch at Login
+
+
+
+
+
+
+
+

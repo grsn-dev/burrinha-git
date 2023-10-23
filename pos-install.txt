@@ -1,0 +1,86 @@
+# extras
+apt install ubuntu-restricted -extras
+
+# compilador
+apt install build-essential
+
+# Java Corretto
+  apt install java-common
+  download https://docs.aws.amazon.com/corretto/latest/corretto-21-ug/downloads-list.html
+  dpkg -i java-21-amazon-corretto-jdk_21.0.0.35-1_amd64.deb
+  sudo update-alternatives --config java
+
+# configurar JAVA_HOME
+  incluir no /etc/environment
+  JAVA_HOME=/usr/lib/jvm/java-21-amazon-corretto/bin/java
+  echo $JAVA_HOME
+
+  incluir no .bashrc
+  export JAVA_HOME="/usr/lib/jvm/java-21-amazon-corretto"
+  export PATH=$JAVA_HOME/bin:$PATH
+
+# fonts
+  copiar fontes para ~/.local/share/fonts - para o usuario
+                      /usr/shar/fonts - para todos 
+  fc-cache -fv
+  fc-cache -r -v
+
+
+# nvm 
+  https://github.com/nvm-sh/nvm#installing-and-updating
+
+
+# Maven
+sudo apt-get -y install maven
+mvn -version
+
+# Java no VSCode
+  vscjava.vscode-java-pack
+  vscjava.vscode-java-debug
+  vscjava.vscode-java-test
+  vscjava.vscode-java-dependency
+  vscjava.vscode-maven
+  redhat.java
+  vscjava.vscode-spring-initializr
+  vmware.vscode-spring-boot
+  vscjava.vscode-spring-boot-dashboard
+
+  # Rest Client
+  https://apidog.com/?utm_source=google_Ia&utm_campaign=20592270193&utm_content=151235961582&utm_term=apidog&gclid=CjwKCAjwp8OpBhAFEiwAG7NaEjvrHwNtYwa-7qyWuRa1DGBPs8MbhaMG3PkqIyfHRuFNWSChtXOlXhoChloQAvD_BwE
+
+
+  # Docker
+	sudo apt update
+	sudo apt install apt-transport-https ca-certificates curl software-properties-common
+	curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+	echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+	sudo apt update
+	apt-cache policy docker-ce
+	sudo apt install docker-ce
+	sudo systemctl status docker
+  # Docker sem sudo
+	# exibe os groups que o user tem acesso
+	  groups
+	# Create the docker group
+	  sudo groupadd docker
+	# Add your user to the docker group.
+	  sudo usermod -aG docker $USER
+	# Você também pode executar o seguinte comando para ativar as alterações nos grupos:	
+	  newgrp docker
+	# Verifique se você pode executar comandos do docker sem sudo
+	  docker run hello-world
+	# Este comando baixa uma imagem de teste e a executa em um contêiner. Quando o contêiner é executado, 
+	  ele imprime uma mensagem e sai. 
+	# Se você executou inicialmente comandos Docker CLI usando sudo antes de adicionar seu usuário ao 
+	  grupo docker, poderá ver o seguinte erro:
+	  WARNING: Error loading config file: /home/user/.docker/config.json -stat /home/user/.docker/config.json: 
+	  permission denied
+	# Este erro indica que as configurações de permissão para o diretório ~/.docker/ estão incorretas, devido 
+	  ao uso do comando sudo anteriormente.
+	  Para corrigir esse problema, remova o diretório ~/.docker/ (ele é recriado automaticamente, mas todas as
+          configurações personalizadas são perdidas) ou altere sua propriedade e permissões usando os seguintes comandos:
+	  sudo chown "$USER":"$USER" /home/"$USER"/.docker -R
+	  sudo chmod g+rwx "$HOME/.docker" -R
+
+
+
